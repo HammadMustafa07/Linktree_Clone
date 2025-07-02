@@ -9,6 +9,7 @@ import { Plus, Link2, Globe, Edit3, Eye, Copy, Share2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { SignInButton } from "@clerk/nextjs";
 
 export default function LinktreeForm() {
   // useUser from Clerk for getting user info
@@ -35,9 +36,115 @@ export default function LinktreeForm() {
     return <LinktreeLoading />;
   }
 
+  // ✅ If user is not logged in, show "Not allowed"
+  if (!user) {
+    return (
+      <>
+        {/* <Navbar /> */}
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8">
+          <div className="max-w-md mx-auto px-4">
+            <div className="flex items-center justify-center min-h-[80vh]">
+              <div className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 text-center w-full">
+                {/* Icon */}
+                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 15v2m0 0v2m0-2h2m-2 0H10m2-8V7m0 0V5m0 2h2m-2 0H10M12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9z"
+                    />
+                  </svg>
+                </div>
+
+                {/* Title */}
+                <h1 className="text-2xl font-bold text-gray-900 mb-3 font-outfit">
+                  Authentication Required
+                </h1>
+
+                {/* Subtitle */}
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  You need to be signed in to access your Linktree dashboard and
+                  manage your links.
+                </p>
+
+                {/* Action Buttons */}
+                <div className="space-y-3">
+                  <SignInButton>
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 font-medium shadow-lg">
+                      Sign In
+                    </button>
+                  </SignInButton>
+                  {/* <button className="w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-xl hover:bg-gray-200 transition-all duration-200 font-medium">
+                  Create Account
+                </button> */}
+                </div>
+
+                {/* Divider */}
+                <div className="flex items-center my-6">
+                  <div className="flex-1 border-t border-gray-200"></div>
+                  <span className="px-3 text-sm text-gray-500">or</span>
+                  <div className="flex-1 border-t border-gray-200"></div>
+                </div>
+
+                {/* Learn More */}
+                <div className="text-center">
+                  <p className="text-sm text-gray-500 mb-3">New to Linktree?</p>
+                  <button className="text-purple-600 hover:text-purple-700 text-sm font-medium transition-colors">
+                    Learn more about creating your link-in-bio →
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="mt-8 grid grid-cols-1 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                    <Link2 className="w-4 h-4 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">
+                      All Your Links
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      One link to connect everything
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Eye className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">
+                      Track Analytics
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      See how your links perform
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Toaster />
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8">
         <div className="max-w-2xl mx-auto px-4">
@@ -62,7 +169,13 @@ export default function LinktreeForm() {
             <div className="text-center mb-6">
               <div className="relative inline-block mb-6">
                 <div className="w-24 h-24 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto flex items-center justify-center text-white text-3xl font-bold shadow-lg">
-                  <Image className="rounded-full" src={user.imageUrl} alt="profile" height={100} width={100} />
+                  <Image
+                    className="rounded-full"
+                    src={user.imageUrl}
+                    alt="profile"
+                    height={100}
+                    width={100}
+                  />
                 </div>
                 <button className="absolute -bottom-2 -right-2 w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-gray-700 transition-colors">
                   <Edit3 className="w-4 h-4" />
@@ -144,7 +257,8 @@ export default function LinktreeForm() {
                 <p className="text-sm text-gray-500 mb-3">Your public link</p>
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <code className="font-mono text-lg text-gray-900 bg-white px-4 py-2 rounded-lg border">
-                    https://linktr-ee-clone07-by-hammad.vercel.app/links/{user.id}
+                    https://linktr-ee-clone07-by-hammad.vercel.app/links/
+                    {user.id}
                   </code>
                   <button
                     onClick={handleCopy}

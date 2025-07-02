@@ -10,7 +10,7 @@ export default clerkMiddleware(async (auth, req) => {
   }
 
   // Protect all routes except `/`, `/sign-in`, `/sign-up`
-  const isPublic = ['/', '/sign-in', '/sign-up'].some((route) =>
+  const isPublic = ['/', '/sign-in', '/sign-up', '/links', '/api'].some((route) =>
     url.pathname.startsWith(route)
   );
 
