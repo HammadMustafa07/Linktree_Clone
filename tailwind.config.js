@@ -11,6 +11,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        outfit: 'var(--font-outfit)', // 👈 added custom font via variable
+      },
     },
   },
   plugins: [],

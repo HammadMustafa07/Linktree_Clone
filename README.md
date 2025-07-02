@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+---
 
-First, run the development server:
+# 🌐 Linktree Clone
+
+A fully functional **Linktree Clone** where authenticated users can **add**, **delete**, and **manage** their personal links. Each user gets a **unique shareable URL** displaying their active links — perfect for social media bios or personal branding!
+
+## 🚀 Features
+
+* ✅ User authentication with **Clerk**
+* ➕ Add new links (with title and URL)
+* ❌ Delete existing links
+* 📤 Shareable profile page (public view of all links)
+* 🌐 Built with **Next.js**, **MongoDB**, and **JavaScript**
+
+---
+
+## 🧱 Tech Stack
+
+| Tech                    | Description                             |
+| ----------------------- | --------------------------------------- |
+| Next.js                 | React framework for full-stack web apps |
+| MongoDB                 | NoSQL database to store user links      |
+| Clerk                   | Authentication and user management      |
+| JavaScript              | Programming language                    |
+| Tailwind CSS (optional) | For UI styling                          |
+
+---
+
+## 🔐 Authentication (Powered by Clerk)
+
+* Users **sign up or log in** using Clerk
+* Each user has a **unique user ID**
+* Only authenticated users can manage (add/delete) their links
+
+---
+
+## 🛠️ Installation & Setup
+
+```bash
+git clone https://github.com/yourusername/linktree-clone.git
+cd linktree-clone
+npm install
+```
+
+### Set up environment variables:
+
+Create a `.env.local` file in the root:
+
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+MONGODB_URI=
+```
+
+> Get Clerk keys from: [https://clerk.dev](https://clerk.dev)
+
+---
+
+## ▶️ Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see your app.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔗 Public Share Link
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Each user has a **public profile page** where all their links are visible.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Example:
 
-## Deploy on Vercel
+```
+https://yourdomain.com/user_abc123
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can copy this URL and share it anywhere (Instagram, Twitter, LinkedIn).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## 🙌 Contributing
+
+Feel free to open issues or submit pull requests if you'd like to improve this project!
+
+---

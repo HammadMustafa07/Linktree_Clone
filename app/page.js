@@ -1,101 +1,61 @@
+'use client'
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="bg-[#254F1A] h-[160vh] flex ">
+        <Navbar />
+        <div className=" h-full  ml-[5vw] w-[45vw]  flex justify-center ">
+          <div className=" flex flex-col mt-[18vw] gap-7">
+            <p className="text-[#D2E823] text-[78.3333px] leading-[78.4666px] font-[800] font-outfit  text-5xl">
+              Everything you are. In one, simple link in bio.
+            </p>
+            <p className="text-[18px] text-white font-[600] font-outfit">
+              Join 70M+ people using Linktree for their link in bio. One link to
+              help you share everything you create, curate and sell from your
+              Instagram, TikTok, Twitter, YouTube and other social media
+              profiles.
+            </p>
+            <div className="flex gap-2 font-outfit">
+              <input
+                type="text"
+                placeholder="linktr.ee/"
+                className="py-5 px-3.5 w-[260px]  font-[600]  focus:border-white rounded-lg"
+              />
+              <button className="py-2 px-7 bg-[#E9C0E9] font-[600] rounded-full">
+                Claim you Linktree
+              </button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="w-[50vw]  h-full  flex justify-center items-center">
+          <Image src="/hero.png" alt="heroimg" className=""></Image>
+        </div>
+      </div>
+      <div className="h-[110vh] bg-[#E9C0E9] flex">
+        <div className="h-full w-[50vw]    flex justify-center items-center">
+          <Image src="/about.png" alt="about" />
+        </div>
+        <div className="h-full w-[50vw] flex flex-col justify-center gap-7">
+          <p className="text-[53.9px] mx-auto leading-[50.4666px] font-[800] text-[#502274] font-outfit text-5xl ">
+            Create and customize <br /> your Linktree in <br /> minutes
+          </p>
+          <p className="text-[18px] mx-auto  font-[500] leading-[24.4666px] text-[#1E2330] font-outfit">
+            Connect your TikTok, Instagram, Twitter, website, store, videos,
+            music, <br /> podcast, events and more. It all comes together in a
+            link in bio landing <br /> page designed to convert.
+          </p>
+          <button className="py-5 mx-12 font-outfit text-white px-7 bg-[#502274] w-[250px] font-[600] rounded-full">
+            Get started for free
+          </button>
+        </div>
+      </div>
+      <Footer/>
+    </>
   );
 }
