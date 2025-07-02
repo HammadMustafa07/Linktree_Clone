@@ -34,12 +34,12 @@ export default function Home() {
           </div>
         </div>
         <div className="w-[50vw]  h-full  flex justify-center items-center">
-          <Image src="/hero.png" alt="heroimg" className=""></Image>
+          <Image src="/hero.png" alt="heroimg" height={450} width={450} className=""></Image>
         </div>
       </div>
       <div className="h-[110vh] bg-[#E9C0E9] flex">
         <div className="h-full w-[50vw]    flex justify-center items-center">
-          <Image src="/about.png" alt="about" />
+          <Image src="/about.png" alt="about"height={400} width={400} />
         </div>
         <div className="h-full w-[50vw] flex flex-col justify-center gap-7">
           <p className="text-[53.9px] mx-auto leading-[50.4666px] font-[800] text-[#502274] font-outfit text-5xl ">

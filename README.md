@@ -1,8 +1,7 @@
 
 ---
 
-# 🌐 Linktree Clone
-
+# 🌐 Linktree Clon
 A fully functional **Linktree Clone** where authenticated users can **add**, **delete**, and **manage** their personal links. Each user gets a **unique shareable URL** displaying their active links — perfect for social media bios or personal branding!
 
 ## 🚀 Features

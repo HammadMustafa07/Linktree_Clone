@@ -19,7 +19,7 @@ export default function LinktreeForm() {
 
   // Handle copying the public profile link
   const handleCopy = async () => {
-    const textToCopy = `linktr-ee-clone07-by-hammad/links/${user.id}`;
+    const textToCopy = `https://linktr-ee-clone07-by-hammad.vercel.app/links/${user.id}`;
     try {
       await navigator.clipboard.writeText(textToCopy);
       setCopied(true);
@@ -62,7 +62,7 @@ export default function LinktreeForm() {
             <div className="text-center mb-6">
               <div className="relative inline-block mb-6">
                 <div className="w-24 h-24 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto flex items-center justify-center text-white text-3xl font-bold shadow-lg">
-                  <Image className="rounded-full" src={user.imageUrl} alt="" />
+                  <Image className="rounded-full" src={user.imageUrl} alt="profile" height={100} width={100} />
                 </div>
                 <button className="absolute -bottom-2 -right-2 w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-gray-700 transition-colors">
                   <Edit3 className="w-4 h-4" />
@@ -144,7 +144,7 @@ export default function LinktreeForm() {
                 <p className="text-sm text-gray-500 mb-3">Your public link</p>
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <code className="font-mono text-lg text-gray-900 bg-white px-4 py-2 rounded-lg border">
-                    linktr-ee-clone07-by-hammad/links/{user.id}
+                    https://linktr-ee-clone07-by-hammad.vercel.app/links/{user.id}
                   </code>
                   <button
                     onClick={handleCopy}

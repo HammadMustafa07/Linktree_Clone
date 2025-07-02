@@ -125,6 +125,8 @@ export default function Links({ params }) {
             <Image
               src={imgUrl}
               alt="Profile"
+              height={100}
+              width={100}
               className="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-xl ring-4 ring-purple-100 object-cover"
               onLoad={(e) => e.target.classList.add('animate-fade-in')}
             />
