@@ -20,7 +20,7 @@ export default function LinktreeForm() {
 
   // Handle copying the public profile link
   const handleCopy = async () => {
-    const textToCopy = `https://linktr-ee-clone07-by-hammad.vercel.app/links/${user.id}`;
+    const textToCopy = `https://link-hub-by-hammad-mustafa.vercel.app//links/${user.id}`;
     try {
       await navigator.clipboard.writeText(textToCopy);
       setCopied(true);
@@ -260,12 +260,6 @@ export default function LinktreeForm() {
                     https://linktr-ee-clone07-by-hammad.vercel.app/links/
                     {user.id}
                   </code>
-                  <button
-                    onClick={handleCopy}
-                    className="p-2 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-colors"
-                  >
-                    <Copy className="w-4 h-4" />
-                  </button>
                 </div>
               </div>
 
