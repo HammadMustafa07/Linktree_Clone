@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} text-black font-sans antialiased`}>
-            
+            <Navbar/>
           {children}
         </body>
       </html>
